@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { ListadoComponent } from './listado/listado.component';
 import { Pagina404Component } from './pagina404/pagina404.component';
 import { CreacionComponent } from './creacion/creacion.component';
+import { HttpClient, HttpClientModule, provideHttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { CreacionComponent } from './creacion/creacion.component';
     AppRoutingModule
   ],
   providers: [
-    provideClientHydration(withEventReplay())
+    provideClientHydration(withEventReplay()),
+    provideHttpClient()
   ],
   bootstrap: [AppComponent]
 })

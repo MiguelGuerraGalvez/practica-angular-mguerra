@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-const URL_BASE="https://ejerciciostutorialesya.com/vue/datos.php";
+const URL_BASE="https://apiproyecto016.iesruizgijon.es/api/articulos";
 
 @Injectable({
   providedIn: 'root'
