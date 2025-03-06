@@ -1,1 +1,19 @@
-<p>listado works!</p>
+<h2>Listado de productos</h2>
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>DESCRIPCIÓN</th>
+        <th>PRECIO</th>
+        <th colspan="2">ACCIONES</th>
+    </tr>
+    <tr *ngFor="let producto of productos">
+        <td>{{producto.id}}</td>
+        <td>{{producto.descripcion}}</td>
+        <td>{{producto.precio}}</td>
+        <td><a>EDITAR</a></td>
+        <td><a>ELIMINAR</a></td>
+    </tr>
+</table>
+<ul>
+    <li *ngFor="let prod of productos">{{prod.descripcion}}</li>
+</ul>
