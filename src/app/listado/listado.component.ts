@@ -18,9 +18,7 @@ export class ListadoComponent implements OnInit {
   ngOnInit(): void {
       this.servicioproductos.obtenerTodos().subscribe(
         (datos)=>{
-          this.productos = datos.articulos;
-          console.log(this.productos);
-          // this.productos[0].
+          this.productos = datos.productos;
         }
       );
   }

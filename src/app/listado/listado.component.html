@@ -2,15 +2,18 @@
 <table border="1">
     <tr>
         <th>ID</th>
-        <th>DESCRIPCIÓN</th>
+        <th>NOMBRE</th>
         <th>PRECIO</th>
         <th colspan="2">ACCIONES</th>
     </tr>
-    <tr *ngFor="let producto of productos">
-        <td>{{producto.id}}</td>
-        <td>{{producto.descripcion}}</td>
-        <td>{{producto.precio}}</td>
-        <td><a>EDITAR</a></td>
-        <td><a>ELIMINAR</a></td>
-    </tr>
+    <tbody>
+        <tr *ngFor="let producto of productos">
+            <td>{{producto.id}}</td>
+            <td>{{producto.nombre}}</td>
+            <td>{{producto.precio}}</td>
+            <td><a>EDITAR</a></td>
+            <td><a>ELIMINAR</a></td>
+        </tr>
+    </tbody>
+    
 </table>

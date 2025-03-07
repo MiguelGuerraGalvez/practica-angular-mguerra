@@ -8,6 +8,9 @@ import { ListadoComponent } from './listado/listado.component';
 import { Pagina404Component } from './pagina404/pagina404.component';
 import { CreacionComponent } from './creacion/creacion.component';
 import { HttpClient, HttpClientModule, provideHttpClient } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+import { EditarComponent } from './editar/editar.component';
+import { EliminarComponent } from './eliminar/eliminar.component';
 
 @NgModule({
   declarations: [
@@ -15,11 +18,14 @@ import { HttpClient, HttpClientModule, provideHttpClient } from '@angular/common
     HomeComponent,
     ListadoComponent,
     Pagina404Component,
-    CreacionComponent
+    CreacionComponent,
+    EditarComponent,
+    EliminarComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [
     provideClientHydration(withEventReplay()),
