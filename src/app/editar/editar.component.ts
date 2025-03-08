@@ -41,13 +41,15 @@ export class EditarComponent implements OnInit {
       this.servicioproductos.editar(datos).subscribe(
         response => {
           console.log('Respuesta del servidor:', response);
-          alert('Producto creado con éxito');
+          alert('Producto editado con éxito');
         },
         error => {
           console.error('Error en la solicitud:', error);
-          alert('Hubo un error al crear el producto');
+          alert('Hubo un error al editar el producto');
         }
       );
     }
+
+    this.router.navigate(['/home']);
   }
 }

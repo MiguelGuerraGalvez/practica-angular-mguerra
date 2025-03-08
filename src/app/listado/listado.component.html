@@ -1,18 +1,20 @@
 <h2>Listado de productos</h2>
-<table border="1">
-    <tr>
-        <th>ID</th>
-        <th>NOMBRE</th>
-        <th>PRECIO</th>
-        <th colspan="2">ACCIONES</th>
-    </tr>
-    <tbody>
-        <tr *ngFor="let producto of productos">
+<table border="1" class="table table-striped">
+    <thead class="p-5">
+        <tr class="p-5">
+            <th>ID</th>
+            <th>NOMBRE</th>
+            <th>PRECIO</th>
+            <th colspan="2">ACCIONES</th>
+        </tr>
+    </thead>
+    <tbody class="p-5">
+        <tr class="p-5" *ngFor="let producto of productos">
             <td>{{producto.id}}</td>
             <td>{{producto.nombre}}</td>
-            <td>{{producto.precio}}</td>
-            <td><a routerLink="/editar/{{producto.id}}">EDITAR</a></td>
-            <td><a routerLink="/eliminar/{{producto.id}}">ELIMINAR</a></td>
+            <td>{{producto.precio}}€</td>
+            <td><a class="btn btn-success" routerLink="/editar/{{producto.id}}">EDITAR</a></td>
+            <td><a class="btn btn-danger" routerLink="/eliminar/{{producto.id}}">ELIMINAR</a></td>
         </tr>
     </tbody>
     

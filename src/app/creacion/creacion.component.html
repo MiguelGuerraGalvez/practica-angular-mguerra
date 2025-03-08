@@ -1,17 +1,25 @@
 <div>
-    <form [formGroup]="formulario" (ngSubmit)="enviar()">
-        <label for="nombre">Nombre: </label>
-        <input type="text" id="nombre" formControlName="nombre">
-        <p *ngIf="formulario.controls['nombre'].invalid && formulario.controls['nombre'].touched">
-          El campo nombre es obligatorio y debe tener al menos 5 caracteres.
-        </p>
+  <h1 class="display-3 mb-5">CREAR PRODUCTO</h1>
+
+  <form class="text-start mt-5" [formGroup]="formulario" (ngSubmit)="enviar()">
+    <div class="mt-3">
+      <label class="form-label" for="nombre">Nombre: </label>
+      <input class="form-control" type="text" id="nombre" formControlName="nombre">
+      <p class="form-text" *ngIf="formulario.controls['nombre'].invalid && formulario.controls['nombre'].touched">
+        El campo nombre es obligatorio y debe tener al menos 5 caracteres.
+      </p>
+    </div>
+      
+    <div class="mt-3">
+      <label class="form-label" for="precio">Precio: </label>
+      <input class="form-control" type="number" id="precio" step="0.01" formControlName="precio">
+      <p class="form-text" *ngIf="formulario.controls['precio'].invalid && formulario.controls['precio'].touched">
+        El campo precio es obligatorio y debe ser mayor a 0.
+      </p>
+    </div>
     
-        <label for="precio">Precio: </label>
-        <input type="number" id="precio" step="0.01" formControlName="precio">
-        <p *ngIf="formulario.controls['precio'].invalid && formulario.controls['precio'].touched">
-          El campo precio es obligatorio y debe ser mayor a 0.
-        </p>
-    
-        <input type="submit" [disabled]="formulario.invalid" value="Crear Producto">
-      </form>
+    <div class="mt-3">
+      <input class="btn btn-primary" type="submit" [disabled]="formulario.invalid" value="Crear Producto">
+    </div>
+    </form>
 </div>

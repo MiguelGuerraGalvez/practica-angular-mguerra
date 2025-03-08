@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { IProducto } from '../iproducto';
 import { ProductosService } from '../productos.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-creacion',
@@ -14,7 +15,7 @@ export class CreacionComponent implements OnInit {
 
   productos!:IProducto[];
   
-  constructor(private servicioproductos:ProductosService, private fb: FormBuilder) {
+  constructor(private servicioproductos:ProductosService, private fb: FormBuilder, private router: Router) {
     this.formulario = this.fb.group({
       nombre: ['',  [Validators.required, Validators.minLength(5)]],
       precio: ['', [Validators.required, Validators.min(0.01)]]
@@ -38,6 +39,9 @@ export class CreacionComponent implements OnInit {
         }
       );
     }
+
+    this.formulario.reset();
+    this.router.navigate(['/creacion']);
   }
 
   ngOnInit(): void {

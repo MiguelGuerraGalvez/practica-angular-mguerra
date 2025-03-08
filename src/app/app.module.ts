@@ -11,6 +11,7 @@ import { HttpClient, HttpClientModule, provideHttpClient } from '@angular/common
 import { ReactiveFormsModule } from '@angular/forms';
 import { EditarComponent } from './editar/editar.component';
 import { EliminarComponent } from './eliminar/eliminar.component';
+import { ImagenPipe } from './imagen.pipe';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { EliminarComponent } from './eliminar/eliminar.component';
     Pagina404Component,
     CreacionComponent,
     EditarComponent,
-    EliminarComponent
+    EliminarComponent,
+    ImagenPipe
   ],
   imports: [
     BrowserModule,
