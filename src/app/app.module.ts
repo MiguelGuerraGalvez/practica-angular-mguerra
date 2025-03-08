@@ -12,6 +12,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { EditarComponent } from './editar/editar.component';
 import { EliminarComponent } from './eliminar/eliminar.component';
 import { ImagenPipe } from './imagen.pipe';
+import { BuscarComponent } from './buscar/buscar.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,12 +24,14 @@ import { ImagenPipe } from './imagen.pipe';
     CreacionComponent,
     EditarComponent,
     EliminarComponent,
-    ImagenPipe
+    ImagenPipe,
+    BuscarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [
     provideClientHydration(withEventReplay()),

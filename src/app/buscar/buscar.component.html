@@ -1,0 +1,27 @@
+<div class="text-start">
+    <h1 class="display-3">BÚSQUEDA DE PRODUCTOS</h1>
+
+    <label class="form-label" for="nombre">Buscar por nombre: </label>
+    <input class="form-control mb-5" type="search" id="nombre" [(ngModel)]="nombre">
+
+    <table border="1" class="table table-striped mt-5 text-center">
+        <thead class="p-5">
+            <tr class="p-5">
+                <th>ID</th>
+                <th>NOMBRE</th>
+                <th>PRECIO</th>
+                <th colspan="2">ACCIONES</th>
+            </tr>
+        </thead>
+        <tbody class="p-5">
+            <tr class="p-5" *ngFor="let producto of productos">
+                <td *ngIf="producto.nombre.toLowerCase().includes(nombre.toLowerCase())">{{producto.id}}</td>
+                <td *ngIf="producto.nombre.toLowerCase().includes(nombre.toLowerCase())">{{producto.nombre}}</td>
+                <td *ngIf="producto.nombre.toLowerCase().includes(nombre.toLowerCase())">{{producto.precio}}€</td>
+                <td *ngIf="producto.nombre.toLowerCase().includes(nombre.toLowerCase())"><a class="btn btn-success" routerLink="/editar/{{producto.id}}">EDITAR</a></td>
+                <td *ngIf="producto.nombre.toLowerCase().includes(nombre.toLowerCase())"><a class="btn btn-danger" routerLink="/eliminar/{{producto.id}}">ELIMINAR</a></td>
+            </tr>
+        </tbody>
+        
+    </table>
+</div>
