@@ -43,4 +43,12 @@ export class ProductosService {
 
     return this.httpclient.post(URL_BASE, params, { headers });
   }
+
+  eliminar(id: number): Observable<any> {
+    // // Creamos los parámetros de la solicitud DELETE
+    // const params = new HttpParams().set('id', id.toString());
+
+    // Realizamos el DELETE
+    return this.httpclient.delete(URL_BASE, { body: { id: id } });
+  }
 }
