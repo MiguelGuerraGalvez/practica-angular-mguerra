@@ -5,6 +5,7 @@ import { ListadoComponent } from './listado/listado.component';
 import { CreacionComponent } from './creacion/creacion.component';
 import { Pagina404Component } from './pagina404/pagina404.component';
 import { EliminarComponent } from './eliminar/eliminar.component';
+import { EditarComponent } from './editar/editar.component';
 
 const routes: Routes = [
   {path:'', redirectTo: '/home', pathMatch:'full'},
@@ -12,6 +13,7 @@ const routes: Routes = [
   {path:'listado', component:ListadoComponent},
   {path:'creacion', component:CreacionComponent},
   {path:'eliminar/:id', component:EliminarComponent},
+  {path:'editar/:id', component:EditarComponent},
   {path:'**', component:Pagina404Component}
 ];
 

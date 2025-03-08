@@ -19,12 +19,6 @@ export class ProductosService {
   // Creamos una propiedad llamada httpclient
   constructor(private httpclient:HttpClient) { }
 
-  // Implementar los métodos que necesitamos para:
-  // rescatar todos los productos
-  // rescatar un producto con un determinado id
-  // Actualizar ...
-  // Eliminar ...
-
   obtenerTodos() {
     // Devolvemos un objeto de Angular llamado Observable
     return this.httpclient.get<any>(`${URL_BASE}`);
@@ -45,10 +39,16 @@ export class ProductosService {
   }
 
   eliminar(id: number): Observable<any> {
-    // // Creamos los parámetros de la solicitud DELETE
-    // const params = new HttpParams().set('id', id.toString());
-
     // Realizamos el DELETE
     return this.httpclient.delete(URL_BASE, { body: { id: id } });
+  }
+
+  editar(producto: IProducto): Observable<any> {
+    // Realizamos el POST usando x-www-form-urlencoded (con HttpParams)
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/x-www-form-urlencoded'
+    });
+
+    return this.httpclient.put(URL_BASE, JSON.stringify(producto), { headers });
   }
 }
