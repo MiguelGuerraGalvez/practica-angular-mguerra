@@ -4,7 +4,7 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { IProducto } from './iproducto';
 
-const URL_BASE="http://localhost/API%20Angular/consultaProductos.php";
+const URL_BASE="https://ruizgijon.ddns.net/guerram/API%20Angular/consultaProductos.php";
 
 interface ApiResponse {
   articulos: any[]; // O define una interfaz para el artículo si es necesario
