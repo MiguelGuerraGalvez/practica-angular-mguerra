@@ -6,8 +6,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class ImagenPipe implements PipeTransform {
 
-  transform(value: unknown, ...args: unknown[]): unknown {
-    return null;
+  transform(value: any, args?: any): any {
+    return "http://localhost/imagenesAngular/freepik__the-style-is-candid-image-photography-with-natural__93539.jpeg";
   }
 
 }
